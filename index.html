@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>환율 계산기</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>환율 계산기</h1>
+
+        <div class="input-group">
+            <input id="amount" type="number" placeholder="금액">
+            <button id="reverseBtn" onclick="reverse()">⇄</button>
+            <select id="currency" onchange="showRate()">
+                <option value="USD">달러 (USD)</option>
+                <option value="EUR">유로 (EUR)</option>
+                <option value="JPY">엔화 (JPY)</option>
+                <option value="KRW">원화 (KRW)</option>
+            </select>
+        </div>
+
+        <input type="date" id="datePicker" onchange="showRateByDate()">
+        
+        <button onclick="convert()">환산</button>
+        
+        <p id ="rate"></p>
+        <p id="result"></p>
+
+        <canvas id="rateChart" width="400" height="200"></canvas>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
